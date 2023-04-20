@@ -56,7 +56,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         buildContext: $(Build.SourcesDirectory)/challenges-frontend
         tags: |
-          challenges-frontend-$(formatDateTime(convertTimeZone(getDate(), 'UTC', 'Central Standard Time'), 'yyyyMMdd') )-$(counter('challenges-frontend') )
+          challenges-frontend-$(formatDateTime(convertTimeZone(getDate(), 'UTC', 'Europe/Skopje'), 'yyyyMMdd'))-$(counter('challenges-frontend'))
 #  - job: BuildMultiplication
 #    displayName: Build multiplication
 #    pool:
