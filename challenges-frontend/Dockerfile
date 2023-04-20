@@ -1,2 +1,4 @@
 FROM nginx:1.19
-COPY build /usr/share/nginx/html/
+RUN pwd
+RUN ls -lart
+COPY ./build /usr/share/nginx/html/
