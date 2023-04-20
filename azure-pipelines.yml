@@ -1,0 +1,88 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+#trigger:
+# - master
+
+trigger:
+  branches:
+    include:
+    - none
+
+#TODO, rename tags for each image
+
+resources:
+- repo: self
+
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: '9996b419-37a9-49c0-a2d3-5fe80c0680e9'
+  imageRepository: 'diplomska'
+  containerRegistry: 'diplomskacontainerregistry.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)'
+  tag: '$(Build.BuildId)'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  displayName: Build and push stage
+  jobs:
+  - job: BuildChallengesFrontend
+    displayName: Build challenges-frontend
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '14.x'
+      displayName: 'Install Node.js'
+    - script: |
+        cd $(Build.SourcesDirectory)/challenges-frontend
+        npm install
+        npm run build
+        pwd
+        ls -lart
+        ls -la build
+      displayName: 'npm install and build'
+    - task: Docker@2
+      displayName: Build and push an front-end image to container registry
+      inputs:
+        command: buildAndPush
+        repository: $(imageRepository)
+        dockerfile: $(dockerfilePath)/challenges-frontend/Dockerfile
+        containerRegistry: $(dockerRegistryServiceConnection)
+        buildContext: $(Build.SourcesDirectory)/challenges-frontend
+        tags: |
+          $(tag)
+#  - job: BuildMultiplication
+#    displayName: Build multiplication
+#    pool:
+#      vmImage: $(vmImageName)
+#    steps:
+#    - task: Docker@2
+#      displayName: Build and push multiplication service image to container registry
+#      inputs:
+#        command: buildAndPush
+#        repository: $(imageRepository)
+#        dockerfile: $(dockerfilePath)/multiplication/Dockerfile
+#        containerRegistry: $(dockerRegistryServiceConnection)
+#        tags: |
+#          $(tag)
+#
+#  - job: BuildConsul
+#    displayName: Build consul
+#    pool:
+#      vmImage: $(vmImageName)
+#    steps:
+#    - task: Docker@2
+#      displayName: Build and push consul image to container registry
+#      inputs:
+#        command: buildAndPush
+#        repository: $(imageRepository)
+#        dockerfile: $(dockerfilePath)/docker/consul/Dockerfile
+#        containerRegistry: $(dockerRegistryServiceConnection)
+#        tags: |
+#          $(tag)
