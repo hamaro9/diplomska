@@ -8,80 +8,93 @@
 trigger:
   branches:
     include:
-    - none
+      - none
 
 resources:
-- repo: self
+  - repo: self
 
 variables:
-  # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '9996b419-37a9-49c0-a2d3-5fe80c0680e9'
-  imageFrontEndRepository: 'challenges-frontend'
-  imageMultiplicationRepository: 'multiplication'
-  imageConsulRepository: 'consul'
-  containerRegistry: 'diplomskacontainerregistry.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)'
-  tag: '$(Build.BuildId)'
-
-
+  dockerRegistryServiceConnection: "9996b419-37a9-49c0-a2d3-5fe80c0680e9"
+  imageFrontEndRepository: "challenges-frontend"
+  imageMultiplicationRepository: "multiplication"
+  imageConsulRepository: "consul"
+  containerRegistry: "diplomskacontainerregistry.azurecr.io"
+  dockerfilePath: "$(Build.SourcesDirectory)"
+  tag: "$(Build.BuildId)"
 
 stages:
-- stage: Build
-  displayName: Build and push stage
-  jobs:
-  - job: BuildChallengesFrontend
-    displayName: Build challenges-frontend
-    pool:
-      name: Amar Linux
-    steps:
-    - task: NodeTool@0
-      inputs:
-        versionSpec: '14.x'
-      displayName: 'Install Node.js'
-    - script: |
-        cd $(Build.SourcesDirectory)/challenges-frontend
-        npm install
-        npm run build
-        pwd
-        ls -lart
-        ls -la build
-      displayName: 'npm install and build'
-    - task: Docker@2
-      displayName: Build and push an front-end image to container registry
-      inputs:
-        command: buildAndPush
-        repository: $(imageFrontEndRepository)
-        dockerfile: $(dockerfilePath)/challenges-frontend/Dockerfile
-        containerRegistry: $(dockerRegistryServiceConnection)
-        buildContext: $(Build.SourcesDirectory)/challenges-frontend
-        tags: |
-          latest
-  - job: BuildMultiplication
-    displayName: Build multiplication
-    pool:
-      name: Amar Linux
-    steps:
-    - task: Docker@2
-      displayName: Build and push multiplication service image to container registry
-      inputs:
-        command: buildAndPush
-        repository: $(imageMultiplicationRepository)
-        dockerfile: $(dockerfilePath)/multiplication/Dockerfile
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          latest
-
-  - job: BuildConsul
-    displayName: Build consul
-    pool:
-      name: Amar Linux
-    steps:
-    - task: Docker@2
-      displayName: Build and push consul image to container registry
-      inputs:
-        command: buildAndPush
-        repository: $(imageConsulRepository)
-        dockerfile: $(dockerfilePath)/docker/consul/Dockerfile
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          latest
+  - stage: Build
+    displayName: Build and push stage
+    jobs:
+      - job: BuildChallengesFrontend
+        displayName: Build challenges-frontend
+        pool:
+          name: Amar Linux
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '14.x'
+            displayName: 'Install Node.js'
+          - script: |
+              cd $(Build.SourcesDirectory)/challenges-frontend
+              npm install
+              npm run build
+              pwd
+              ls -lart
+              ls -la build
+            displayName: 'npm install and build'
+          - task: Docker@2
+            displayName: Build and push an front-end image to container registry
+            inputs:
+              command: buildAndPush
+              repository: $(imageFrontEndRepository)
+              dockerfile: $(dockerfilePath)/challenges-frontend/Dockerfile
+              containerRegistry: $(dockerRegistryServiceConnection)
+              buildContext: $(Build.SourcesDirectory)/challenges-frontend
+              tags: |
+                latest
+      - job: BuildMultiplication
+        displayName: Build multiplication
+        pool:
+          name: Amar Linux
+        steps:
+          - task: JavaToolInstaller@0
+            inputs:
+              versionSpec: "17"
+              jdkArchitectureOption: x64
+              jdkSourceOption: LocalDirectory
+              jdkFile: "/home/amar/openjdk-17.0.1_linux-x64_bin.tar.gz"
+              jdkDestinationDirectory: "/opt/openjdk-17"
+              cleanDestinationDirectory: true
+          - task: Maven@4
+            inputs:
+              mavenPomFile: "multiplication/pom.xml"
+              mavenOptions: "-Xmx3072m"
+              javaHomeOption: "JDKVersion"
+              jdkVersionOption: "1.17"
+              jdkArchitectureOption: "x64"
+              publishJUnitResults: false
+              goals: "clean package"
+          - task: Docker@2
+            displayName: Build and push multiplication service image to container registry
+            inputs:
+              command: buildAndPush
+              repository: $(imageMultiplicationRepository)
+              dockerfile: $(dockerfilePath)/multiplication/Dockerfile
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                latest
+      - job: BuildConsul
+        displayName: Build consul
+        pool:
+          name: Amar Linux
+        steps:
+          - task: Docker@2
+            displayName: Build and push consul image to container registry
+            inputs:
+              command: buildAndPush
+              repository: $(imageConsulRepository)
+              dockerfile: $(dockerfilePath)/docker/consul/Dockerfile
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                latest
