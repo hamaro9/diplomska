@@ -10,8 +10,6 @@ trigger:
     include:
     - none
 
-#TODO, rename tags for each image
-
 resources:
 - repo: self
 
@@ -19,6 +17,8 @@ variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '9996b419-37a9-49c0-a2d3-5fe80c0680e9'
   imageFrontEndRepository: 'challenges-frontend'
+  imageMultiplicationRepository: 'multiplication'
+  imageConsulRepository: 'consul'
   containerRegistry: 'diplomskacontainerregistry.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)'
   tag: '$(Build.BuildId)'
@@ -56,32 +56,32 @@ stages:
         buildContext: $(Build.SourcesDirectory)/challenges-frontend
         tags: |
           latest
-#  - job: BuildMultiplication
-#    displayName: Build multiplication
-#    pool:
-#      name: Amar Linux
-#    steps:
-#    - task: Docker@2
-#      displayName: Build and push multiplication service image to container registry
-#      inputs:
-#        command: buildAndPush
-#        repository: $(imageRepository)
-#        dockerfile: $(dockerfilePath)/multiplication/Dockerfile
-#        containerRegistry: $(dockerRegistryServiceConnection)
-#        tags: |
-#          $(tag)
-#
-#  - job: BuildConsul
-#    displayName: Build consul
-#    pool:
-#      name: Amar Linux
-#    steps:
-#    - task: Docker@2
-#      displayName: Build and push consul image to container registry
-#      inputs:
-#        command: buildAndPush
-#        repository: $(imageRepository)
-#        dockerfile: $(dockerfilePath)/docker/consul/Dockerfile
-#        containerRegistry: $(dockerRegistryServiceConnection)
-#        tags: |
-#          $(tag)
+  - job: BuildMultiplication
+    displayName: Build multiplication
+    pool:
+      name: Amar Linux
+    steps:
+    - task: Docker@2
+      displayName: Build and push multiplication service image to container registry
+      inputs:
+        command: buildAndPush
+        repository: $(imageMultiplicationRepository)
+        dockerfile: $(dockerfilePath)/multiplication/Dockerfile
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          latest
+
+  - job: BuildConsul
+    displayName: Build consul
+    pool:
+      name: Amar Linux
+    steps:
+    - task: Docker@2
+      displayName: Build and push consul image to container registry
+      inputs:
+        command: buildAndPush
+        repository: $(imageConsulRepository)
+        dockerfile: $(dockerfilePath)/docker/consul/Dockerfile
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          latest
