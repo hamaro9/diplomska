@@ -2,11 +2,11 @@ version: "3"
 
 services:
   frontend:
-    image: challenges-frontend:1.0
+    image: diplomskacontainerregistry.azurecr.io/challenges-frontend:latest
     ports:
       - '3000:80'
   multiplication:
-    image: multiplication:2.7.1-SNAPSHOT
+    image: diplomskacontainerregistry.azurecr.io/multiplication:latest
     environment:
       - SPRING_PROFILES_ACTIVE=docker
       - SPRING_CLOUD_CONSUL_HOST=consul
@@ -50,7 +50,7 @@ services:
     networks:
       - microservices
   consul-importer:
-    image: consul-importer:1.9
+    image: diplomskacontainerregistry.azurecr.io/consul:latest
     depends_on:
       - consul-dev
     networks:
@@ -84,3 +84,4 @@ services:
 networks:
   microservices:
     driver: bridge
+    
