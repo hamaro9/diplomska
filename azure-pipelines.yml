@@ -14,10 +14,7 @@ resources:
   - repo: self
 
 variables:
-  dockerRegistryServiceConnection: "9996b419-37a9-49c0-a2d3-5fe80c0680e9"
-  containerRegistry: "diplomskacontainerregistry.azurecr.io"
-  dockerfilePath: "$(Build.SourcesDirectory)"
-  tag: "$(Build.BuildId)"
+  - group: AmahVars
 
 stages:
   - stage: BuildFrontEnd
@@ -41,7 +38,7 @@ stages:
             displayName: Build and push an front-end image to container registry
             inputs:
               command: buildAndPush
-              repository: $(containerRegistry)/challenges-frontend
+              repository: challenges-frontend
               dockerfile: $(dockerfilePath)/challenges-frontend/Dockerfile
               containerRegistry: $(dockerRegistryServiceConnection)
               buildContext: $(Build.SourcesDirectory)/challenges-frontend
@@ -77,7 +74,7 @@ stages:
             displayName: Build and push multiplication service image to container registry
             inputs:
               command: buildAndPush
-              repository: $(containerRegistry)/multiplication
+              repository: multiplication
               dockerfile: $(dockerfilePath)/multiplication/Dockerfile
               containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
@@ -108,7 +105,7 @@ stages:
             displayName: Build and push gamification image to container registry
             inputs:
               command: buildAndPush
-              repository: $(containerRegistry)/gamification
+              repository: gamification
               dockerfile: $(dockerfilePath)/gamification/Dockerfile
               containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
@@ -139,7 +136,7 @@ stages:
             displayName: Build and push gateway image to container registry
             inputs:
               command: buildAndPush
-              repository: $(containerRegistry)/gateway
+              repository: gateway
               dockerfile: $(dockerfilePath)/gateway/Dockerfile
               containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
@@ -170,7 +167,7 @@ stages:
             displayName: Build and push logs image to container registry
             inputs:
               command: buildAndPush
-              repository: $(containerRegistry)/logs
+              repository: logs
               dockerfile: $(dockerfilePath)/logs/Dockerfile
               containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
@@ -188,7 +185,7 @@ stages:
             displayName: Build and push h2 image to container registry
             inputs:
               command: buildAndPush
-              repository: $(containerRegistry)/h2-server-dev
+              repository: h2-server-dev
               dockerfile: $(dockerfilePath)/docker/h2/Dockerfile
               containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
@@ -202,7 +199,7 @@ stages:
             displayName: Build and push consul image to container registry
             inputs:
               command: buildAndPush
-              repository: $(containerRegistry)/consul-importer
+              repository: consul-importer
               dockerfile: $(dockerfilePath)/docker/consul/Dockerfile
               containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
