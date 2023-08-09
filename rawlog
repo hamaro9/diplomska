@@ -1,0 +1,386 @@
+2023-08-09T15:56:55.9717246Z ##[section]Starting: Docker Build
+2023-08-09T15:56:55.9722156Z ==============================================================================
+2023-08-09T15:56:55.9722304Z Task         : Docker
+2023-08-09T15:56:55.9722386Z Description  : Build or push Docker images, login or logout, start or stop containers, or run a Docker command
+2023-08-09T15:56:55.9722645Z Version      : 2.221.0
+2023-08-09T15:56:55.9722708Z Author       : Microsoft Corporation
+2023-08-09T15:56:55.9722796Z Help         : https://aka.ms/azpipes-docker-tsg
+2023-08-09T15:56:55.9722876Z ==============================================================================
+2023-08-09T15:56:56.5331881Z [command]/usr/bin/docker pull icr.io/appcafe/open-liberty:kernel-slim-java11-openj9-ubi
+2023-08-09T15:57:12.8777256Z kernel-slim-java11-openj9-ubi: Pulling from appcafe/open-liberty
+2023-08-09T15:57:12.8777607Z bdd8fd821bfb: Pulling fs layer
+2023-08-09T15:57:12.8777802Z 534f4b207504: Pulling fs layer
+2023-08-09T15:57:12.8777973Z ea54c2619ad3: Pulling fs layer
+2023-08-09T15:57:12.8778235Z d999ebb38d11: Pulling fs layer
+2023-08-09T15:57:12.8778403Z 1c87f04060f0: Pulling fs layer
+2023-08-09T15:57:12.8778589Z 29e43281eb51: Pulling fs layer
+2023-08-09T15:57:12.8778774Z 6faa7bc0cc08: Pulling fs layer
+2023-08-09T15:57:12.8778948Z d999ebb38d11: Waiting
+2023-08-09T15:57:12.8779116Z 1c87f04060f0: Waiting
+2023-08-09T15:57:12.8779286Z 29e43281eb51: Waiting
+2023-08-09T15:57:12.8779438Z 6faa7bc0cc08: Waiting
+2023-08-09T15:57:12.8779614Z 7aced98bfc8e: Pulling fs layer
+2023-08-09T15:57:12.8779796Z e17e1173da6f: Pulling fs layer
+2023-08-09T15:57:12.8779963Z 4c95077d56dd: Pulling fs layer
+2023-08-09T15:57:12.8780148Z c345c8a73fd7: Pulling fs layer
+2023-08-09T15:57:12.8780330Z c569486eba47: Pulling fs layer
+2023-08-09T15:57:12.8780497Z 1773e016b379: Pulling fs layer
+2023-08-09T15:57:12.8780675Z 7aced98bfc8e: Waiting
+2023-08-09T15:57:12.8780840Z e17e1173da6f: Waiting
+2023-08-09T15:57:12.8780994Z 4c95077d56dd: Waiting
+2023-08-09T15:57:12.8781161Z c345c8a73fd7: Waiting
+2023-08-09T15:57:12.8781329Z c569486eba47: Waiting
+2023-08-09T15:57:12.8781487Z 81978f2993cd: Pulling fs layer
+2023-08-09T15:57:12.8781905Z 768960d5696a: Pulling fs layer
+2023-08-09T15:57:12.8782092Z 127e9dfe007a: Pulling fs layer
+2023-08-09T15:57:12.8782361Z 81978f2993cd: Waiting
+2023-08-09T15:57:12.8782514Z 768960d5696a: Waiting
+2023-08-09T15:57:12.8782661Z 127e9dfe007a: Waiting
+2023-08-09T15:57:12.8782827Z ea54c2619ad3: Verifying Checksum
+2023-08-09T15:57:12.8782995Z ea54c2619ad3: Download complete
+2023-08-09T15:57:12.8783162Z 534f4b207504: Verifying Checksum
+2023-08-09T15:57:12.8783313Z 534f4b207504: Download complete
+2023-08-09T15:57:12.8783477Z 1c87f04060f0: Verifying Checksum
+2023-08-09T15:57:12.8783643Z 1c87f04060f0: Download complete
+2023-08-09T15:57:12.8783807Z bdd8fd821bfb: Verifying Checksum
+2023-08-09T15:57:12.8783959Z bdd8fd821bfb: Download complete
+2023-08-09T15:57:12.8784121Z 6faa7bc0cc08: Verifying Checksum
+2023-08-09T15:57:12.8784283Z 6faa7bc0cc08: Download complete
+2023-08-09T15:57:12.8784432Z 29e43281eb51: Verifying Checksum
+2023-08-09T15:57:12.8784597Z 29e43281eb51: Download complete
+2023-08-09T15:57:12.8784761Z e17e1173da6f: Verifying Checksum
+2023-08-09T15:57:12.8784909Z e17e1173da6f: Download complete
+2023-08-09T15:57:12.8785072Z 7aced98bfc8e: Verifying Checksum
+2023-08-09T15:57:12.8785238Z 7aced98bfc8e: Download complete
+2023-08-09T15:57:12.8785387Z 4c95077d56dd: Verifying Checksum
+2023-08-09T15:57:12.8785551Z 4c95077d56dd: Download complete
+2023-08-09T15:57:12.8785716Z c569486eba47: Verifying Checksum
+2023-08-09T15:57:12.8785864Z c569486eba47: Download complete
+2023-08-09T15:57:12.8786028Z c345c8a73fd7: Verifying Checksum
+2023-08-09T15:57:12.8786193Z c345c8a73fd7: Download complete
+2023-08-09T15:57:12.8786341Z 81978f2993cd: Verifying Checksum
+2023-08-09T15:57:12.8786506Z 81978f2993cd: Download complete
+2023-08-09T15:57:12.8786667Z 1773e016b379: Verifying Checksum
+2023-08-09T15:57:12.8786815Z 1773e016b379: Download complete
+2023-08-09T15:57:12.8787156Z 768960d5696a: Verifying Checksum
+2023-08-09T15:57:12.8787624Z 768960d5696a: Download complete
+2023-08-09T15:57:12.8787794Z d999ebb38d11: Verifying Checksum
+2023-08-09T15:57:12.8787981Z d999ebb38d11: Download complete
+2023-08-09T15:57:12.8788166Z 127e9dfe007a: Verifying Checksum
+2023-08-09T15:57:12.8788351Z 127e9dfe007a: Download complete
+2023-08-09T15:57:12.8788628Z bdd8fd821bfb: Pull complete
+2023-08-09T15:57:12.8788809Z 534f4b207504: Pull complete
+2023-08-09T15:57:12.8788989Z ea54c2619ad3: Pull complete
+2023-08-09T15:57:12.8789153Z d999ebb38d11: Pull complete
+2023-08-09T15:57:12.8789414Z 1c87f04060f0: Pull complete
+2023-08-09T15:57:12.8789592Z 29e43281eb51: Pull complete
+2023-08-09T15:57:12.8789769Z 6faa7bc0cc08: Pull complete
+2023-08-09T15:57:12.8789932Z 7aced98bfc8e: Pull complete
+2023-08-09T15:57:12.8790109Z e17e1173da6f: Pull complete
+2023-08-09T15:57:12.8790285Z 4c95077d56dd: Pull complete
+2023-08-09T15:57:12.8790448Z c345c8a73fd7: Pull complete
+2023-08-09T15:57:12.8790624Z c569486eba47: Pull complete
+2023-08-09T15:57:12.8790801Z 1773e016b379: Pull complete
+2023-08-09T15:57:12.8790970Z 81978f2993cd: Pull complete
+2023-08-09T15:57:12.8791151Z 768960d5696a: Pull complete
+2023-08-09T15:57:12.8791328Z 127e9dfe007a: Pull complete
+2023-08-09T15:57:12.8791588Z Digest: sha256:97a441bff855b98a2652c6e10febf23cea92f7fe09aacf64b6609ec98205e851
+2023-08-09T15:57:12.8792067Z Status: Downloaded newer image for icr.io/appcafe/open-liberty:kernel-slim-java11-openj9-ubi
+2023-08-09T15:57:12.8792429Z icr.io/appcafe/open-liberty:kernel-slim-java11-openj9-ubi
+2023-08-09T15:57:12.8795463Z [command]/usr/bin/docker inspect icr.io/appcafe/open-liberty:kernel-slim-java11-openj9-ubi
+2023-08-09T15:57:12.9008426Z [
+2023-08-09T15:57:12.9009291Z     {
+2023-08-09T15:57:12.9010181Z         "Id": "sha256:5bf04bf48b98cf3ae310fb93a38f84fa039fbbe922b1cc4ea05dc709fe410288",
+2023-08-09T15:57:12.9010661Z         "RepoTags": [
+2023-08-09T15:57:12.9011485Z             "icr.io/appcafe/open-liberty:kernel-slim-java11-openj9-ubi"
+2023-08-09T15:57:12.9011859Z         ],
+2023-08-09T15:57:12.9012211Z         "RepoDigests": [
+2023-08-09T15:57:12.9012981Z             "icr.io/appcafe/open-liberty@sha256:97a441bff855b98a2652c6e10febf23cea92f7fe09aacf64b6609ec98205e851"
+2023-08-09T15:57:12.9013453Z         ],
+2023-08-09T15:57:12.9013852Z         "Parent": "",
+2023-08-09T15:57:12.9014181Z         "Comment": "",
+2023-08-09T15:57:12.9014708Z         "Created": "2023-08-02T20:43:24.623094411Z",
+2023-08-09T15:57:12.9015146Z         "Container": "b43bb08965cc5d5da0dec2d5517e70b952d0aca4268fd6738801d862436690e0",
+2023-08-09T15:57:12.9015675Z         "ContainerConfig": {
+2023-08-09T15:57:12.9016054Z             "Hostname": "b43bb08965cc",
+2023-08-09T15:57:12.9016372Z             "Domainname": "",
+2023-08-09T15:57:12.9016629Z             "User": "1001",
+2023-08-09T15:57:12.9016891Z             "AttachStdin": false,
+2023-08-09T15:57:12.9017147Z             "AttachStdout": false,
+2023-08-09T15:57:12.9017402Z             "AttachStderr": false,
+2023-08-09T15:57:12.9017686Z             "ExposedPorts": {
+2023-08-09T15:57:12.9017931Z                 "9080/tcp": {},
+2023-08-09T15:57:12.9018197Z                 "9443/tcp": {}
+2023-08-09T15:57:12.9018457Z             },
+2023-08-09T15:57:12.9018813Z             "Tty": false,
+2023-08-09T15:57:12.9019105Z             "OpenStdin": false,
+2023-08-09T15:57:12.9019406Z             "StdinOnce": false,
+2023-08-09T15:57:12.9019725Z             "Env": [
+2023-08-09T15:57:12.9020038Z                 "container=oci",
+2023-08-09T15:57:12.9020366Z                 "LANG=en_US.UTF-8",
+2023-08-09T15:57:12.9020683Z                 "LANGUAGE=en_US:en",
+2023-08-09T15:57:12.9021033Z                 "LC_ALL=en_US.UTF-8",
+2023-08-09T15:57:12.9021466Z                 "PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/ol/wlp/bin:/opt/ol/helpers/build",
+2023-08-09T15:57:12.9021995Z                 "JAVA_VERSION=jdk-11.0.19+7_openj9-0.38.0",
+2023-08-09T15:57:12.9022409Z                 "JAVA_HOME=/opt/java/openjdk",
+2023-08-09T15:57:12.9023196Z                 "JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal",
+2023-08-09T15:57:12.9024004Z                 "LOG_DIR=/logs",
+2023-08-09T15:57:12.9024410Z                 "WLP_OUTPUT_DIR=/opt/ol/wlp/output",
+2023-08-09T15:57:12.9024704Z                 "WLP_SKIP_MAXPERMSIZE=true",
+2023-08-09T15:57:12.9024971Z                 "OPENJ9_SCC=true",
+2023-08-09T15:57:12.9025694Z                 "RANDFILE=/tmp/.rnd",
+2023-08-09T15:57:12.9026527Z                 "OPENJ9_JAVA_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal -Dosgi.checkConfiguration=false"
+2023-08-09T15:57:12.9026883Z             ],
+2023-08-09T15:57:12.9027012Z             "Cmd": [
+2023-08-09T15:57:12.9027164Z                 "/bin/sh",
+2023-08-09T15:57:12.9027315Z                 "-c",
+2023-08-09T15:57:12.9027447Z                 "#(nop) ",
+2023-08-09T15:57:12.9027755Z                 "LABEL liberty.image.tag=kernel-slim-java11-openj9-ubi"
+2023-08-09T15:57:12.9027947Z             ],
+2023-08-09T15:57:12.9028156Z             "Image": "sha256:6152b46dc925931ad55cc69ecbe042ceef536955fe80bdea0b5564071b0932c0",
+2023-08-09T15:57:12.9028394Z             "Volumes": null,
+2023-08-09T15:57:12.9028560Z             "WorkingDir": "",
+2023-08-09T15:57:12.9028705Z             "Entrypoint": [
+2023-08-09T15:57:12.9028971Z                 "/opt/ol/helpers/runtime/docker-server.sh"
+2023-08-09T15:57:12.9029145Z             ],
+2023-08-09T15:57:12.9029278Z             "OnBuild": null,
+2023-08-09T15:57:12.9029434Z             "Labels": {
+2023-08-09T15:57:12.9029595Z                 "architecture": "x86_64",
+2023-08-09T15:57:12.9029859Z                 "build-date": "2023-06-23T02:02:46",
+2023-08-09T15:57:12.9030147Z                 "com.redhat.component": "ubi8-container",
+2023-08-09T15:57:12.9030546Z                 "com.redhat.license_terms": "https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI",
+2023-08-09T15:57:12.9031308Z                 "description": "This image contains the Open Liberty runtime with IBM Semeru Runtime Open Edition OpenJDK with OpenJ9 and Red Hat UBI 8 as the base OS.  For more information on this image please see https://github.com/OpenLiberty/ci.docker#building-an-application-image",
+2023-08-09T15:57:12.9031764Z                 "distribution-scope": "public",
+2023-08-09T15:57:12.9031955Z                 "io.buildah.version": "1.23.1",
+2023-08-09T15:57:12.9032439Z                 "io.k8s.description": "The Universal Base Image is designed and engineered to be the base layer for all of your containerized applications, middleware and utilities. This base image is freely redistributable, but Red Hat only supports Red Hat technologies through subscriptions for Red Hat products. This image is maintained by Red Hat and updated regularly.",
+2023-08-09T15:57:12.9033015Z                 "io.k8s.display-name": "Red Hat Universal Base Image 8",
+2023-08-09T15:57:12.9033346Z                 "io.openliberty.image.tag": "kernel-slim-java11-openj9-ubi",
+2023-08-09T15:57:12.9033635Z                 "io.openshift.expose-services": "",
+2023-08-09T15:57:12.9033833Z                 "io.openshift.tags": "base rhel8",
+2023-08-09T15:57:12.9034240Z                 "liberty.image.tag": "kernel-slim-java11-openj9-ubi",
+2023-08-09T15:57:12.9034410Z                 "maintainer": "Red Hat, Inc.",
+2023-08-09T15:57:12.9034568Z                 "name": "Open Liberty",
+2023-08-09T15:57:12.9034796Z                 "org.opencontainers.image.authors": "Leo Christy Jesuraj, Melissa Lee, Thomas Watson, Michal Broz, Wendy Raschke",
+2023-08-09T15:57:12.9035273Z                 "org.opencontainers.image.revision": "cl230720230710-1201",
+2023-08-09T15:57:12.9035506Z                 "org.opencontainers.image.source": "https://github.com/OpenLiberty/ci.docker",
+2023-08-09T15:57:12.9035718Z                 "org.opencontainers.image.url": "https://openliberty.io/",
+2023-08-09T15:57:12.9036156Z                 "org.opencontainers.image.vendor": "Open Liberty",
+2023-08-09T15:57:12.9036355Z                 "org.opencontainers.image.version": "23.0.0.7",
+2023-08-09T15:57:12.9036521Z                 "release": "11",
+2023-08-09T15:57:12.9036846Z                 "run": "docker run --rm -ti <image_name:tag> /bin/bash",
+2023-08-09T15:57:12.9037099Z                 "summary": "Image for Open Liberty with IBM Semeru Runtime Open Edition OpenJDK with OpenJ9 and UBI 8",
+2023-08-09T15:57:12.9037487Z                 "url": "https://access.redhat.com/containers/#/registry.access.redhat.com/ubi8/images/8.8-1009",
+2023-08-09T15:57:12.9037792Z                 "vcs-ref": "384f2bb33eebab960262e967aa16d01fe2dbebff",
+2023-08-09T15:57:12.9038013Z                 "vcs-type": "git",
+2023-08-09T15:57:12.9038168Z                 "vendor": "Open Liberty",
+2023-08-09T15:57:12.9038322Z                 "version": "23.0.0.7"
+2023-08-09T15:57:12.9038444Z             }
+2023-08-09T15:57:12.9038565Z         },
+2023-08-09T15:57:12.9038708Z         "DockerVersion": "20.10.21",
+2023-08-09T15:57:12.9038842Z         "Author": "",
+2023-08-09T15:57:12.9038973Z         "Config": {
+2023-08-09T15:57:12.9039109Z             "Hostname": "",
+2023-08-09T15:57:12.9039236Z             "Domainname": "",
+2023-08-09T15:57:12.9039377Z             "User": "1001",
+2023-08-09T15:57:12.9039520Z             "AttachStdin": false,
+2023-08-09T15:57:12.9039657Z             "AttachStdout": false,
+2023-08-09T15:57:12.9039808Z             "AttachStderr": false,
+2023-08-09T15:57:12.9039952Z             "ExposedPorts": {
+2023-08-09T15:57:12.9040079Z                 "9080/tcp": {},
+2023-08-09T15:57:12.9040215Z                 "9443/tcp": {}
+2023-08-09T15:57:12.9040343Z             },
+2023-08-09T15:57:12.9040458Z             "Tty": false,
+2023-08-09T15:57:12.9040601Z             "OpenStdin": false,
+2023-08-09T15:57:12.9040745Z             "StdinOnce": false,
+2023-08-09T15:57:12.9040868Z             "Env": [
+2023-08-09T15:57:12.9041002Z                 "container=oci",
+2023-08-09T15:57:12.9041150Z                 "LANG=en_US.UTF-8",
+2023-08-09T15:57:12.9041295Z                 "LANGUAGE=en_US:en",
+2023-08-09T15:57:12.9041456Z                 "LC_ALL=en_US.UTF-8",
+2023-08-09T15:57:12.9041703Z                 "PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/ol/wlp/bin:/opt/ol/helpers/build",
+2023-08-09T15:57:12.9042040Z                 "JAVA_VERSION=jdk-11.0.19+7_openj9-0.38.0",
+2023-08-09T15:57:12.9042207Z                 "JAVA_HOME=/opt/java/openjdk",
+2023-08-09T15:57:12.9042730Z                 "JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal",
+2023-08-09T15:57:12.9043040Z                 "LOG_DIR=/logs",
+2023-08-09T15:57:12.9043201Z                 "WLP_OUTPUT_DIR=/opt/ol/wlp/output",
+2023-08-09T15:57:12.9043370Z                 "WLP_SKIP_MAXPERMSIZE=true",
+2023-08-09T15:57:12.9043515Z                 "OPENJ9_SCC=true",
+2023-08-09T15:57:12.9043669Z                 "RANDFILE=/tmp/.rnd",
+2023-08-09T15:57:12.9044177Z                 "OPENJ9_JAVA_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal -Dosgi.checkConfiguration=false"
+2023-08-09T15:57:12.9044482Z             ],
+2023-08-09T15:57:12.9044593Z             "Cmd": [
+2023-08-09T15:57:12.9044736Z                 "/opt/ol/wlp/bin/server",
+2023-08-09T15:57:12.9044878Z                 "run",
+2023-08-09T15:57:12.9044999Z                 "defaultServer"
+2023-08-09T15:57:12.9045131Z             ],
+2023-08-09T15:57:12.9045326Z             "Image": "sha256:6152b46dc925931ad55cc69ecbe042ceef536955fe80bdea0b5564071b0932c0",
+2023-08-09T15:57:12.9045516Z             "Volumes": null,
+2023-08-09T15:57:12.9045661Z             "WorkingDir": "",
+2023-08-09T15:57:12.9045801Z             "Entrypoint": [
+2023-08-09T15:57:12.9046019Z                 "/opt/ol/helpers/runtime/docker-server.sh"
+2023-08-09T15:57:12.9046234Z             ],
+2023-08-09T15:57:12.9046365Z             "OnBuild": null,
+2023-08-09T15:57:12.9046490Z             "Labels": {
+2023-08-09T15:57:12.9046632Z                 "architecture": "x86_64",
+2023-08-09T15:57:12.9046929Z                 "build-date": "2023-06-23T02:02:46",
+2023-08-09T15:57:12.9047166Z                 "com.redhat.component": "ubi8-container",
+2023-08-09T15:57:12.9047518Z                 "com.redhat.license_terms": "https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI",
+2023-08-09T15:57:12.9048177Z                 "description": "This image contains the Open Liberty runtime with IBM Semeru Runtime Open Edition OpenJDK with OpenJ9 and Red Hat UBI 8 as the base OS.  For more information on this image please see https://github.com/OpenLiberty/ci.docker#building-an-application-image",
+2023-08-09T15:57:12.9048576Z                 "distribution-scope": "public",
+2023-08-09T15:57:12.9048732Z                 "io.buildah.version": "1.23.1",
+2023-08-09T15:57:12.9049524Z                 "io.k8s.description": "The Universal Base Image is designed and engineered to be the base layer for all of your containerized applications, middleware and utilities. This base image is freely redistributable, but Red Hat only supports Red Hat technologies through subscriptions for Red Hat products. This image is maintained by Red Hat and updated regularly.",
+2023-08-09T15:57:12.9061196Z                 "io.k8s.display-name": "Red Hat Universal Base Image 8",
+2023-08-09T15:57:12.9061522Z                 "io.openliberty.image.tag": "kernel-slim-java11-openj9-ubi",
+2023-08-09T15:57:12.9061765Z                 "io.openshift.expose-services": "",
+2023-08-09T15:57:12.9061940Z                 "io.openshift.tags": "base rhel8",
+2023-08-09T15:57:12.9062209Z                 "liberty.image.tag": "kernel-slim-java11-openj9-ubi",
+2023-08-09T15:57:12.9062396Z                 "maintainer": "Red Hat, Inc.",
+2023-08-09T15:57:12.9062542Z                 "name": "Open Liberty",
+2023-08-09T15:57:12.9062782Z                 "org.opencontainers.image.authors": "Leo Christy Jesuraj, Melissa Lee, Thomas Watson, Michal Broz, Wendy Raschke",
+2023-08-09T15:57:12.9072259Z                 "org.opencontainers.image.revision": "cl230720230710-1201",
+2023-08-09T15:57:12.9072556Z                 "org.opencontainers.image.source": "https://github.com/OpenLiberty/ci.docker",
+2023-08-09T15:57:12.9072836Z                 "org.opencontainers.image.url": "https://openliberty.io/",
+2023-08-09T15:57:12.9073093Z                 "org.opencontainers.image.vendor": "Open Liberty",
+2023-08-09T15:57:12.9073337Z                 "org.opencontainers.image.version": "23.0.0.7",
+2023-08-09T15:57:12.9073527Z                 "release": "11",
+2023-08-09T15:57:12.9073863Z                 "run": "docker run --rm -ti <image_name:tag> /bin/bash",
+2023-08-09T15:57:12.9074170Z                 "summary": "Image for Open Liberty with IBM Semeru Runtime Open Edition OpenJDK with OpenJ9 and UBI 8",
+2023-08-09T15:57:12.9074636Z                 "url": "https://access.redhat.com/containers/#/registry.access.redhat.com/ubi8/images/8.8-1009",
+2023-08-09T15:57:12.9075032Z                 "vcs-ref": "384f2bb33eebab960262e967aa16d01fe2dbebff",
+2023-08-09T15:57:12.9075306Z                 "vcs-type": "git",
+2023-08-09T15:57:12.9075494Z                 "vendor": "Open Liberty",
+2023-08-09T15:57:12.9075669Z                 "version": "23.0.0.7"
+2023-08-09T15:57:12.9075833Z             }
+2023-08-09T15:57:12.9075978Z         },
+2023-08-09T15:57:12.9076131Z         "Architecture": "amd64",
+2023-08-09T15:57:12.9076416Z         "Os": "linux",
+2023-08-09T15:57:12.9076576Z         "Size": 662753195,
+2023-08-09T15:57:12.9076734Z         "VirtualSize": 662753195,
+2023-08-09T15:57:12.9076904Z         "GraphDriver": {
+2023-08-09T15:57:12.9077055Z             "Data": {
+2023-08-09T15:57:12.9078555Z                 "LowerDir": "/var/lib/docker/overlay2/f19ccc5cf03d1ce09374ce3da14e76d8681d970c4311fe66be9048a19e9bc7ce/diff:/var/lib/docker/overlay2/c531dd145a34cc9d30ed3b9a1d78ecac538890129c47f09aab4b6097502bd9a0/diff:/var/lib/docker/overlay2/6c267cd0d906a9b3005b2c8ff280422cbcecd5d1fe0cd1a2d4713c76918c556f/diff:/var/lib/docker/overlay2/7a667e2089e9141e6ce6decb6b5c856b628cda8232688f18df7cb5641d0ffb96/diff:/var/lib/docker/overlay2/fbb515812331ac463df20291662b80092595800dfbb05acd59448698595d42b3/diff:/var/lib/docker/overlay2/032fbc14f1bdb2c31c36e04ea326a72b54f288c5e06099e87a72d5b98289ce70/diff:/var/lib/docker/overlay2/7d1347e669ad70360ee0df93e07772b525c8ae21de94b0fd3787b8a022572a8e/diff:/var/lib/docker/overlay2/3c0f06dd45a0bdb8db04f75157adab907d897a26b94eab52e61e1a5ded06bcf2/diff:/var/lib/docker/overlay2/f962c2573deb4fdc746c1f5e6c5db4dc3495763094a07113f8664424703ea4c7/diff:/var/lib/docker/overlay2/c618f0ae197c406addfb36b98029c8944ec7d5fc68b31bb950365956c467db32/diff:/var/lib/docker/overlay2/0fa6f84985885caa8bfa583618db2d0abfd87dfd77843f7bd710bd7a2c3d9f8c/diff:/var/lib/docker/overlay2/dc678e122756b9d6c197bc3ff6e3a04c0fad46077fb1aa6c5e585ea89ad239cb/diff:/var/lib/docker/overlay2/87772795e2d60a6be0f756a2c6c4857ca5c5121d27ad631530dc9d4c1bf9abd9/diff:/var/lib/docker/overlay2/fe606bd501834382ea9674ba1a049a926bbdc3830d934cf26e4574d17b5175cf/diff:/var/lib/docker/overlay2/dea1b4fa7366048aa7d4bc78f22fda3433d110c58c30b4685da8c8861ad21c87/diff",
+2023-08-09T15:57:12.9080387Z                 "MergedDir": "/var/lib/docker/overlay2/8b77777897a8c8db81c2b25d7cbfaaa3d7dc76a7c7ab3e2850a3f64ce8ee36f2/merged",
+2023-08-09T15:57:12.9080738Z                 "UpperDir": "/var/lib/docker/overlay2/8b77777897a8c8db81c2b25d7cbfaaa3d7dc76a7c7ab3e2850a3f64ce8ee36f2/diff",
+2023-08-09T15:57:12.9081184Z                 "WorkDir": "/var/lib/docker/overlay2/8b77777897a8c8db81c2b25d7cbfaaa3d7dc76a7c7ab3e2850a3f64ce8ee36f2/work"
+2023-08-09T15:57:12.9081386Z             },
+2023-08-09T15:57:12.9081504Z             "Name": "overlay2"
+2023-08-09T15:57:12.9081639Z         },
+2023-08-09T15:57:12.9081768Z         "RootFS": {
+2023-08-09T15:57:12.9081891Z             "Type": "layers",
+2023-08-09T15:57:12.9082031Z             "Layers": [
+2023-08-09T15:57:12.9082231Z                 "sha256:b51194abfc91510e7cc523fd1735ea595e9ab7b8fbb8697e7e2ac6bb04b0f5e3",
+2023-08-09T15:57:12.9082482Z                 "sha256:26efbca2cfd09593dd087d1bf865484a3ffeda034703b4f30852654d3583d1ca",
+2023-08-09T15:57:12.9082753Z                 "sha256:794670f8c8219d59b25b3b89a809eea68ad4d1ca0785326d9962ebb4adc9bee0",
+2023-08-09T15:57:12.9083013Z                 "sha256:af52c4e8ea19bb837d589d2a0007f517db0368549ef916046293a3d5126a936c",
+2023-08-09T15:57:12.9083270Z                 "sha256:bc4c01bc8b523fbc3f4f6008ba9767fc4ba63630bea0fa035111d59e37cce2f3",
+2023-08-09T15:57:12.9083513Z                 "sha256:fc0ddac6c9ee76e97781cd83ccfe9f9212891cac28afa71d81bcdf6aeb36ab3e",
+2023-08-09T15:57:12.9083771Z                 "sha256:0cef6e8d5899d4a5fab9f0d07b102776f27353b7ce165a7fa6e400bd9b35cc79",
+2023-08-09T15:57:12.9084029Z                 "sha256:714aa48b67f7460fc5f6530ccdc459ef95273be672d94a088558861ec5538dae",
+2023-08-09T15:57:12.9084287Z                 "sha256:4c32664fe48d821b756e805f853e76646c5e8700dbf3edd1a2d43e921efe71b9",
+2023-08-09T15:57:12.9084530Z                 "sha256:35b00e7aee169c073b2d3b1fbb628a8ca9065dbdbc8e205e16c49b4aef94affd",
+2023-08-09T15:57:12.9084787Z                 "sha256:b1933bacb9a311dafb2284c85215ffab758b2663bfa56cc03d3e06b0de079ebc",
+2023-08-09T15:57:12.9085051Z                 "sha256:da2d2505864ca5c58355587a3eab72ca95f2df331096de3e718eb0561c803847",
+2023-08-09T15:57:12.9085297Z                 "sha256:56b3d4d0511e0b604bedaabba1389f8ef5af3c9c1da9e7cafcefb6e52867f447",
+2023-08-09T15:57:12.9085553Z                 "sha256:a51c2198dab42930d4d66b798a4057cd889e6dd87095ba72beb8db11edd1f924",
+2023-08-09T15:57:12.9085814Z                 "sha256:40fc6197c528e9763c2a95620a8a81ae82131e477c79ba8b341957cbedd089d6",
+2023-08-09T15:57:12.9086070Z                 "sha256:97811eee07c2c4674cdfa55673ccf39f71ceb4c578a10579767354948a6ac230"
+2023-08-09T15:57:12.9086293Z             ]
+2023-08-09T15:57:12.9086413Z         },
+2023-08-09T15:57:12.9086590Z         "Metadata": {
+2023-08-09T15:57:12.9086813Z             "LastTagTime": "0001-01-01T00:00:00Z"
+2023-08-09T15:57:12.9086969Z         }
+2023-08-09T15:57:12.9087086Z     }
+2023-08-09T15:57:12.9087188Z ]
+2023-08-09T15:57:12.9138711Z [command]/usr/bin/docker build -f /home/vsts/work/1/s/start/system/Dockerfile --label com.visualstudio.capcargo.image.system.teamfoundationcollectionuri=https://capcargo.visualstudio.com/ --label com.visualstudio.capcargo.image.system.teamproject=CAPcargo IT --label com.visualstudio.capcargo.image.build.repository.name=diplomska-feature-system --label com.visualstudio.capcargo.image.build.sourceversion=55c67851f7839416d395a7fe3c34ca41ec565161 --label com.visualstudio.capcargo.image.build.repository.uri=https://capcargo.visualstudio.com/CAPcargo IT/_git/diplomska-feature-system --label com.visualstudio.capcargo.image.build.sourcebranchname=staging --label com.visualstudio.capcargo.image.build.definitionname=diplomska-feature-system --label com.visualstudio.capcargo.image.build.buildnumber=20230809.26 --label com.visualstudio.capcargo.image.build.builduri=vstfs:///Build/Build/5304 --label image.base.ref.name=icr.io/appcafe/open-liberty:kernel-slim-java11-openj9-ubi --label image.base.digest=sha256:97a441bff855b98a2652c6e10febf23cea92f7fe09aacf64b6609ec98205e851 --no-cache -t ***/system:latest /home/vsts/work/1/s
+2023-08-09T15:57:13.4319725Z #0 building with "default" instance using docker driver
+2023-08-09T15:57:13.4327023Z 
+2023-08-09T15:57:13.4327433Z #1 [internal] load .dockerignore
+2023-08-09T15:57:13.4327681Z #1 transferring context: 2B done
+2023-08-09T15:57:13.4327917Z #1 DONE 0.0s
+2023-08-09T15:57:13.4328048Z 
+2023-08-09T15:57:13.4328282Z #2 [internal] load build definition from Dockerfile
+2023-08-09T15:57:13.4328551Z #2 transferring dockerfile: 1.12kB done
+2023-08-09T15:57:13.4329014Z #2 DONE 0.0s
+2023-08-09T15:57:13.4329155Z 
+2023-08-09T15:57:13.4329779Z #3 [internal] load metadata for icr.io/appcafe/open-liberty:kernel-slim-java11-openj9-ubi
+2023-08-09T15:57:13.4330072Z #3 DONE 0.0s
+2023-08-09T15:57:13.4330217Z 
+2023-08-09T15:57:13.4330417Z #4 [internal] load build context
+2023-08-09T15:57:13.4330660Z #4 transferring context: 871B done
+2023-08-09T15:57:13.4330891Z #4 DONE 0.0s
+2023-08-09T15:57:13.4331027Z 
+2023-08-09T15:57:13.4331226Z #5 [2/9] RUN pwd
+2023-08-09T15:57:13.4331436Z #5 CACHED
+2023-08-09T15:57:13.4331565Z 
+2023-08-09T15:57:13.4331845Z #6 [5/9] RUN ls -l /start/system/
+2023-08-09T15:57:13.4332060Z #6 CACHED
+2023-08-09T15:57:13.4332201Z 
+2023-08-09T15:57:13.4332388Z #7 [3/9] RUN ls -l
+2023-08-09T15:57:13.4334177Z #7 CACHED
+2023-08-09T15:57:13.4334436Z 
+2023-08-09T15:57:13.4335043Z #8 [7/9] RUN features.sh
+2023-08-09T15:57:13.4335329Z #8 CACHED
+2023-08-09T15:57:13.4335487Z 
+2023-08-09T15:57:13.4335960Z #9 [6/9] COPY --chown=1001:0 /start/system/src/main/liberty/config /config/
+2023-08-09T15:57:13.4336290Z #9 CACHED
+2023-08-09T15:57:13.4336449Z 
+2023-08-09T15:57:13.4336764Z #10 [4/9] RUN ls -l /target/
+2023-08-09T15:57:13.4337032Z #10 CACHED
+2023-08-09T15:57:13.4337215Z 
+2023-08-09T15:57:13.4337656Z #11 [8/9] COPY --chown=1001:0 /start/system/target/guide-cloud-azure-system.war /config/apps
+2023-08-09T15:57:13.4338326Z #11 ERROR: failed to calculate checksum of ref moby::0yfg5rvqsr4x93qgg61vmdyao: "/start/system/target/guide-cloud-azure-system.war": not found
+2023-08-09T15:57:13.4338633Z 
+2023-08-09T15:57:13.4339055Z #12 [1/9] FROM icr.io/appcafe/open-liberty:kernel-slim-java11-openj9-ubi
+2023-08-09T15:57:13.4339389Z #12 DONE 0.1s
+2023-08-09T15:57:13.4577966Z ------
+2023-08-09T15:57:13.4579656Z  > [8/9] COPY --chown=1001:0 /start/system/target/guide-cloud-azure-system.war /config/apps:
+2023-08-09T15:57:13.4587548Z ------
+2023-08-09T15:57:13.4588873Z Dockerfile:30
+2023-08-09T15:57:13.4589245Z --------------------
+2023-08-09T15:57:13.4589763Z   28 |     
+2023-08-09T15:57:13.4590083Z   29 |     # Copy the built artifact to the final image
+2023-08-09T15:57:13.4590790Z   30 | >>> COPY --chown=1001:0 /start/system/target/guide-cloud-azure-system.war /config/apps
+2023-08-09T15:57:13.4591402Z   31 |     RUN configure.sh
+2023-08-09T15:57:13.4591963Z --------------------
+2023-08-09T15:57:13.4592601Z ERROR: failed to solve: failed to compute cache key: failed to calculate checksum of ref moby::0yfg5rvqsr4x93qgg61vmdyao: "/start/system/target/guide-cloud-azure-system.war": not found
+2023-08-09T15:57:13.4711654Z ##[error]#0 building with "default" instance using docker driver
+2023-08-09T15:57:13.4720641Z ##[error]#1 [internal] load .dockerignore
+2023-08-09T15:57:13.4721267Z ##[error]#1 transferring context: 2B done
+2023-08-09T15:57:13.4721828Z ##[error]#1 DONE 0.0s
+2023-08-09T15:57:13.4722866Z ##[error]#2 [internal] load build definition from Dockerfile
+2023-08-09T15:57:13.4723499Z ##[error]#2 transferring dockerfile: 1.12kB done
+2023-08-09T15:57:13.4724086Z ##[error]#2 DONE 0.0s
+2023-08-09T15:57:13.4725215Z ##[error]#3 [internal] load metadata for icr.io/appcafe/open-liberty:kernel-slim-java11-openj9-ubi
+2023-08-09T15:57:13.4725849Z ##[error]#3 DONE 0.0s
+2023-08-09T15:57:13.4726860Z ##[error]#4 [internal] load build context
+2023-08-09T15:57:13.4727482Z ##[error]#4 transferring context: 871B done
+2023-08-09T15:57:13.4728053Z ##[error]#4 DONE 0.0s
+2023-08-09T15:57:13.4730022Z ##[error]#5 [2/9] RUN pwd
+2023-08-09T15:57:13.4730545Z ##[error]#5 CACHED
+2023-08-09T15:57:13.4731437Z ##[error]#6 [5/9] RUN ls -l /start/system/
+2023-08-09T15:57:13.4731932Z ##[error]#6 CACHED
+2023-08-09T15:57:13.4732843Z ##[error]#7 [3/9] RUN ls -l
+2023-08-09T15:57:13.4733449Z ##[error]#7 CACHED
+2023-08-09T15:57:13.4734323Z ##[error]#8 [7/9] RUN features.sh
+2023-08-09T15:57:13.4734808Z ##[error]#8 CACHED
+2023-08-09T15:57:13.4735752Z ##[error]#9 [6/9] COPY --chown=1001:0 /start/system/src/main/liberty/config /config/
+2023-08-09T15:57:13.4736291Z ##[error]#9 CACHED
+2023-08-09T15:57:13.4737469Z ##[error]#10 [4/9] RUN ls -l /target/
+2023-08-09T15:57:13.4738130Z ##[error]#10 CACHED
+2023-08-09T15:57:13.4739324Z ##[error]#11 [8/9] COPY --chown=1001:0 /start/system/target/guide-cloud-azure-system.war /config/apps
+2023-08-09T15:57:13.4740287Z ##[error]#11 ERROR: failed to calculate checksum of ref moby::0yfg5rvqsr4x93qgg61vmdyao: "/start/system/target/guide-cloud-azure-system.war": not found
+2023-08-09T15:57:13.4741602Z ##[error]#12 [1/9] FROM icr.io/appcafe/open-liberty:kernel-slim-java11-openj9-ubi
+2023-08-09T15:57:13.4742253Z ##[error]#12 DONE 0.1s
+2023-08-09T15:57:13.4742854Z ##[error]------
+2023-08-09T15:57:13.4743597Z ##[error] > [8/9] COPY --chown=1001:0 /start/system/target/guide-cloud-azure-system.war /config/apps:
+2023-08-09T15:57:13.4744279Z ##[error]------
+2023-08-09T15:57:13.4744877Z ##[error]Dockerfile:30
+2023-08-09T15:57:13.4745501Z ##[error]--------------------
+2023-08-09T15:57:13.4746088Z ##[error]  28 |     
+2023-08-09T15:57:13.4746743Z ##[error]  29 |     # Copy the built artifact to the final image
+2023-08-09T15:57:13.4747545Z ##[error]  30 | >>> COPY --chown=1001:0 /start/system/target/guide-cloud-azure-system.war /config/apps
+2023-08-09T15:57:13.4748328Z ##[error]  31 |     RUN configure.sh
+2023-08-09T15:57:13.4749311Z ##[error]--------------------
+2023-08-09T15:57:13.4750174Z ##[error]ERROR: failed to solve: failed to compute cache key: failed to calculate checksum of ref moby::0yfg5rvqsr4x93qgg61vmdyao: "/start/system/target/guide-cloud-azure-system.war": not found
+2023-08-09T15:57:13.4762375Z ##[error]The process '/usr/bin/docker' failed with exit code 1
+2023-08-09T15:57:13.4836742Z ##[section]Finishing: Docker Build
